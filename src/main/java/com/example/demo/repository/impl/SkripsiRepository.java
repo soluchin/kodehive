@@ -52,11 +52,64 @@ public class SkripsiRepository implements ISkripsiRepository{
 	}
 
 	@Override
-	public List<SkripsiModel> getGTTahun(Integer tahun) {
+	public List<SkripsiModel> getGtTahun(Integer tahun) {
 		var q= "SELECT * FROM skripsi"
 				+ " WHERE tahun > "+tahun;
 		var result = jdbc.query(q, 
 				new BeanPropertyRowMapper<SkripsiModel>(SkripsiModel.class)
+				);
+		return result;
+	}
+
+	@Override
+	public List<SkripsiModel> getLtTahun(Integer tahun) {
+		var q= "SELECT * FROM skripsi"
+				+ " WHERE tahun < "+tahun;
+		var result= jdbc.query(q,
+					new BeanPropertyRowMapper<SkripsiModel>(SkripsiModel.class)
+				);
+		return result;
+	}
+
+	@Override
+	public List<SkripsiModel> getNeTahun(Integer tahun) {
+		var q= "SELECT * FROM skripsi"
+				+ " WHERE tahun != "+tahun;
+		var result= jdbc.query(q,
+					new BeanPropertyRowMapper<SkripsiModel>(SkripsiModel.class)
+				);
+		return result;
+	}
+
+	@Override
+	public List<SkripsiModel> getLikeWord(String word) {
+		var q= "SELECT * FROM skripsi"
+				+ " WHERE judul LIKE '%"+word+"%' ";
+		var result= jdbc.query(q,
+					new BeanPropertyRowMapper<SkripsiModel>(SkripsiModel.class)
+				);
+		return result;
+	}
+
+	@Override
+	public List<SkripsiModel> getByNilaiTahun(int tahun, int nilai) {
+		var q= "SELECT * FROM skripsi"
+				+ " WHERE tahun = "+tahun+
+				" AND nilai = "+nilai;
+		var result= jdbc.query(q,
+					new BeanPropertyRowMapper<SkripsiModel>(SkripsiModel.class)
+				);
+		return result;
+	}
+	
+	@Override
+	public List<SkripsiModel> getAscExcptFirst(String key) {
+		var q= "SELECT * FROM skripsi"
+				+ " WHERE SUBSTRING(judul,1,1)"
+				+ " != '"+ key
+				+ "' ORDER BY tahun ASC";
+		var result= jdbc.query(q,
+					new BeanPropertyRowMapper<SkripsiModel>(SkripsiModel.class)
 				);
 		return result;
 	}

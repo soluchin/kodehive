@@ -13,46 +13,81 @@ import com.example.demo.service.ISkripsiService;
 public class SkripsiService implements ISkripsiService{
 	
 	@Autowired
-	ISkripsiRepository SkripsiRepository;
+	ISkripsiRepository skripsirepository;
 	
 	@Override
 	public int insert(SkripsiModel model) {
-		var result= SkripsiRepository.insert(model);
+		var result= skripsirepository.insert(model);
 		return result;
 	}
 
 	@Override
 	public List<SkripsiModel> readAllData() {
-		var result = SkripsiRepository.readAllData();
+		var result = skripsirepository.readAllData();
 		System.out.println("select success");
 		return result;
 	}
 
 	@Override
 	public List<SkripsiModel> readCustom() {
-		var result = SkripsiRepository.readCustom();
+		var result = skripsirepository.readCustom();
 		return null;
 	}
 
 	@Override
 	public List<SkripsiModel> getEqTahun(Integer tahun) {
-		var result = SkripsiRepository.getEqTahun(tahun);
+		var result = skripsirepository.getEqTahun(tahun);
 		return result;
 	}
 
 	@Override
-	public List<SkripsiModel> getGTTahun(Integer tahun) {
-		var result = SkripsiRepository.getGTTahun(tahun);
+	public List<SkripsiModel> getGtTahun(Integer tahun) {
+		var result = skripsirepository.getGtTahun(tahun);
+		return result;
+	}
+
+	@Override
+	public List<SkripsiModel> getLtTahun(Integer tahun) {
+		var result = skripsirepository.getLtTahun(tahun);
+		return result;
+	}
+	
+	@Override
+	public List<SkripsiModel> getNeTahun(Integer tahun) {
+		var result = skripsirepository.getNeTahun(tahun);
+		return result;
+	}
+
+	@Override
+	public List<SkripsiModel> getLikeWord(String word) {
+		var result = skripsirepository.getLikeWord(word);
+		return result;
+	}
+
+	@Override
+	public List<SkripsiModel> getByNilaiTahun(int tahun, int nilai) {
+		var result = skripsirepository.getByNilaiTahun(tahun, nilai);
+		return result;
+	}
+
+	@Override
+	public List<SkripsiModel> getAscExcptFirst(String key) {
+		var result = skripsirepository.getAscExcptFirst(key);
 		return result;
 	}
 
 	@Override
 	public int gantiNilai(Integer id,Integer nilai) {
-		return SkripsiRepository.gantinilai(id,nilai);
+		return skripsirepository.gantinilai(id,nilai);
 	}
 
 	@Override
 	public int deleteById(int id) {
-		return SkripsiRepository.deleteById(id);
+		return skripsirepository.deleteById(id);
 	}
+
+
+
+
+
 }
