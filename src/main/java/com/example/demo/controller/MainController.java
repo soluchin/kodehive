@@ -56,7 +56,7 @@ public class MainController {
 		return skripsiservice.getLikeWord(word);
 	}
 	
-	@GetMapping("getbynilaitahun")
+	@GetMapping("getbytahunnilai")
 	public List<SkripsiModel> getByNilaiTahun(@RequestParam int tahun, int nilai){
 		return skripsiservice.getByNilaiTahun(tahun, nilai);
 	}
