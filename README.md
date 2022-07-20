@@ -10,3 +10,6 @@ Kumpulan projek bootcamp Java Spring
 
 ## Quiz Update Database
 ![SpringQuizUpdate](https://user-images.githubusercontent.com/60084317/179658097-9ee78a20-9dfb-4da3-9c33-0a7926103ba3.png)
+
+## Slide Neo4J
+[slide](Neo4J.pdf)
