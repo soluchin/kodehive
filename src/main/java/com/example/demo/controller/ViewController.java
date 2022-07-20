@@ -9,4 +9,14 @@ public class ViewController {
 	public String view() {
 		return "/home";
 	}
+	
+	@RequestMapping("/learn")
+	public String learn() {
+		return "/learnfe";
+	}
+	
+	@RequestMapping("quizhtmljs")
+	public String quizhtmljs() {
+		return "/quizhtmljs";
+	}
 }
