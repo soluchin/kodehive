@@ -40,3 +40,30 @@ function awesomeFunction(){
 
 var grand_total= eval("10*20/2")
 console.log(grand_total+2)
+
+function foo1(){
+	return {
+		salam: "hei"
+	}
+}
+
+function foo2(){
+	return {
+		salam: "hei"
+	}
+}
+
+console.log(foo2().salam)
+
+
+
+const person={
+	name: 'sumagusta',
+	pet: {
+		name:"suma"
+	}
+}
+
+console.log(person.pet.name)
+
+

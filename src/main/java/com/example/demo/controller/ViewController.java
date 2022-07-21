@@ -19,4 +19,9 @@ public class ViewController {
 	public String quizhtmljs() {
 		return "/quizhtmljs";
 	}
+	
+	@RequestMapping("learnjquery")
+	public String learnjqury() {
+		return "/learnjquery";
+	}
 }
